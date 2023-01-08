@@ -18,7 +18,16 @@ def usuarioCadastro(request):
 @csrf_exempt
 def setUsuario(request):
    print(request.body)
-   usuario = Usuario(firstname=request.POST.get('firstName'), lastname=request.POST.get('lastName'))
+   usuario = Usuario(
+   nome = request.POST.get('nome'),
+   sexo = request.POST.get('sexo'),
+   longitude = request.POST.get('longitude'),
+   latitude = request.POST.get('latitude'),
+   aviso = request.POST.get('aviso'),
+   quantidade1 = request.POST.get('quantidade1'),
+   quantidade2 = request.POST.get('quantidade2'),
+   quantidade3 = request.POST.get('quantidade3'),
+   quantidade4 = request.POST.get('quantidade4'))
    myusuario = usuario.save()
    myusuarios = Usuario.objects.all().values()
    print(myusuarios)

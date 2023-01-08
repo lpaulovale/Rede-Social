@@ -1,12 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" href="{% static 'usuarios.css' %}">
+</head>
 <body>
 
+  <!--Banner-->
+  <div class='banner retangulo'></div>
+  <div> <img class="banner icon" rel="icone" src="{% static 'icon.png' %}"> </img></div>
+  <div class="banner logo">Loja</div>
+  <div class="banner usuarios">Usuários</div>
+  <div class="banner cadastrar">Cadastrar</div>
+  <div class="banner analistycs">Analistycs</div>
+
 <h1>Usuarios</h1>
-  
+
 <ul>
   {% for x in myusuarios %}
-    <li>{{ x.firstname }} {{ x.lastname }}</li>
+    <a class="usuario nome">{{ x.nome }} </a>
+    <a class="usuario idade"> {{ x.idade }} </a>
+    <a class="usuario sexo">{{ x.sexo }} </a>
+    <a class="usuario latitude">{{ x.latitude }} </a>
+    <a class="usuario longitude">{{ x.longitude }}</a>
+    <a class="usuario aviso">{{ x.aviso }}</a>
+    <a class="usuario quantidade1"> {{ x.quantidade1 }}</a>
+    <a class="usuario quantidade2">{{ x.quantidade2 }}</a>
+    <a class="usuario quantidade3">{{ x.quantidade3 }}</a>
+    <a class="usuario quantidade4"> {{ x.quantidade4 }}</a></li>
   {% endfor %}
 </ul>
 
