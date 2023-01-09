@@ -10,4 +10,5 @@ urlpatterns = [
     path('trocar/', views.trocar, name='trocar'),
     path('atualizarTroca/', views.atualizarTroca, name='atualizarTroca'),
     path('atualizarLocal/', views.atualizarLocal, name='atualizarLocal'),
-]
+    path('analytics/', views.analytics, name='analytics'),
+    ]

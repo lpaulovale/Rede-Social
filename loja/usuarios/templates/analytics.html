@@ -1,0 +1,22 @@
+ {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'analytics.css' %}">
+</head>
+<body>
+  <!--Banner-->
+  <div class='banner retangulo'></div>
+  <div> <img class="banner icon" rel="icone" src="{% static 'icon.png' %}"> </img></div>
+  <div class="banner logo">Loja</div>
+<div class="banner usuarios"><a href="http://127.0.0.1:8000/usuarios/">Usuários</a></div>
+<div class="banner cadastrar"><a href="http://127.0.0.1:8000/cadastro">Cadastrar</a></div>
+<div class="banner analytics"><a href="http://127.0.0.1:8000/analytics">Analitycs</a></div>
+
+<h1>Analytics</h1>
+<div class='opcoes sobreviventesInfectados'>Porcentagem sobreviventes infectados: {{porcentagemInfectados}}</div>
+<div class='opcoes sobreviventesNaoInfectados'> Porcentagem sobreviventes não infectados: {{porcentagemNaoInfectados}}</div>
+<div class='opcoes mediaRecursos'>Quantidade média de recursos: Água {{quantAguaM}} Alimentos {{quantAlimentoM}} Medicamentos {{quantMedicamentosM}} Munição {{quantMunicaoM}}</div>
+<div class='opcoes pontosPerdidos'>Pontos perdidos por infecções: {{pontosPerdidos}}</div>
+</body>
+</html>

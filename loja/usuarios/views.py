@@ -132,4 +132,47 @@ def atualizarLocalizacao(request):
    myuser.save()
    template = loader.get_template('usuarios.html')
    return HttpResponse(template.render())
+
+@csrf_exempt
+def analytics(request):
+  myusuarios = Usuario.objects.all()
+  
+  nInfectados =0
+  nUsuarios =0
+  pontosPerdidos=0
+  quantAgua=0
+  quantAlimento=0
+  quantMedicamentos=0
+  quantMunicao=0
+  
+  for i in myusuarios:
+    nUsuarios += 1
+    
+    if (i.infectado == True):
+      nInfectados += 1
+      pontosPerdidos(i.quantidade1 * 4) + (i.quantidade2 *3) + (i.quantidade3 *2) +i.quantidade4
+    
+    quantAgua += i.quantidade1 
+    quantAlimento += i.quantidade2 
+    quantMedicamentos += i.quantidade3 
+    quantMunicao += i.quantidade4
+  
+  porcentagemInfectados = (nInfectados/nUsuarios)*100
+  porcentagemNaoInfectados = 100 - porcentagemInfectados
+  quantAguaM = quantAgua/nUsuarios
+  quantAlimentoM = quantAlimento/nUsuarios
+  quantMedicamentosM = quantMedicamentos/nUsuarios
+  quantMunicaoM = quantMunicao/nUsuarios
+  
+  context = {
+   'porcentagemInfectados': porcentagemInfectados,
+   'porcentagemNaoInfectados': porcentagemNaoInfectados,
+   'pontosPerdidos': pontosPerdidos,
+   'quantAguaM':  quantAguaM,
+   'quantAlimentoM': quantAlimentoM,
+   'quantMedicamentosM': quantMedicamentosM,
+   'quantMunicaoM': quantMunicaoM
+   }
    
+  template = loader.get_template('analytics.html')
+  return HttpResponse(template.render(context, request))
