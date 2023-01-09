@@ -9,22 +9,22 @@
   <div class='banner retangulo'></div>
   <div> <img class="banner icon" rel="icone" src="{% static 'icon.png' %}"> </img></div>
   <div class="banner logo">Loja</div>
-  <div class="banner usuarios">Usuários</div>
-  <div class="banner cadastrar">Cadastrar</div>
-  <div class="banner analistycs">Analistycs</div>
+<div class="banner usuarios"><a href="http://127.0.0.1:8000/usuarios/">Usuários</a></div>
+<div class="banner cadastrar"><a href="http://127.0.0.1:8000/cadastro">Cadastrar</a></div>
+<div class="banner analistycs"><a href="http://127.0.0.1:8000/analytics">Analistycs</a></div>
 
 <h1>Usuarios</h1>
-<ul>
+<div class="flex-container">
   {% for x in myusuarios %}
-  <li>
+  <div>
     Nome : {{ x.nome }} Idade: {{ x.idade }} Sexo : {{ x.sexo }} Latitude : {{ x.latitude }} Longitude : {{ x.longitude }}
     Aviso : {{ x.aviso }} Água : {{ x.quantidade1 }} Alimento : {{ x.quantidade2 }} Medicação : {{ x.quantidade3 }} Munição : {{ x.quantidade4 }}
-  </li>
+  </div>
   {% endfor %}
-</ul>
+</div>
 <div class='opcoes textoAvisar'><a href="http://127.0.0.1:8000/avisar"> Avisar infeccao</a></div>
 <div class='opcoes caixaAvisar'></div>
 <div class='opcoes tituloTrocar'><a href="http://127.0.0.1:8000/trocar">Trocar itens</a></div>
 <div class='opcoes caixaTrocar'></div>
-</body>1
+</body>
 </html>
