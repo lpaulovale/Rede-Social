@@ -148,6 +148,21 @@ color: #000000;
 
 	color: #000000;
 }
+.cadastrar.avisoTitulo{
+	position: absolute;
+	width: 208px;
+	height: 34px;
+	left: 167px;
+	top: 808px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+
+	color: #000000;
+}
 .cadastrar.longitudeTitulo{position: absolute;
 width: 221px;
 height: 33px;
@@ -259,6 +274,21 @@ color: #000000;}
 	top: 380px;
 
 	background: #D9D9D9;
+}
+.cadastrar.caixaAviso{
+	position: absolute;
+	width: 208px;
+	height: 34px;
+	left: 167px;
+	top: 808px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+
+	color: #000000;
 }
 .cadastrar.caixaLongitude{position: absolute;
 	position: absolute;

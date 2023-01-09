@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="{% static 'usuarios.css' %}">
 </head>
 <body>
-
   <!--Banner-->
   <div class='banner retangulo'></div>
   <div> <img class="banner icon" rel="icone" src="{% static 'icon.png' %}"> </img></div>
@@ -15,21 +14,17 @@
   <div class="banner analistycs">Analistycs</div>
 
 <h1>Usuarios</h1>
-
 <ul>
   {% for x in myusuarios %}
-    <a class="usuario nome">{{ x.nome }} </a>
-    <a class="usuario idade"> {{ x.idade }} </a>
-    <a class="usuario sexo">{{ x.sexo }} </a>
-    <a class="usuario latitude">{{ x.latitude }} </a>
-    <a class="usuario longitude">{{ x.longitude }}</a>
-    <a class="usuario aviso">{{ x.aviso }}</a>
-    <a class="usuario quantidade1"> {{ x.quantidade1 }}</a>
-    <a class="usuario quantidade2">{{ x.quantidade2 }}</a>
-    <a class="usuario quantidade3">{{ x.quantidade3 }}</a>
-    <a class="usuario quantidade4"> {{ x.quantidade4 }}</a></li>
+  <li>
+    Nome : {{ x.nome }} Idade: {{ x.idade }} Sexo : {{ x.sexo }} Latitude : {{ x.latitude }} Longitude : {{ x.longitude }}
+    Aviso : {{ x.aviso }} Água : {{ x.quantidade1 }} Alimento : {{ x.quantidade2 }} Medicação : {{ x.quantidade3 }} Munição : {{ x.quantidade4 }}
+  </li>
   {% endfor %}
 </ul>
-
-</body>
+<div class='opcoes textoAvisar'><a href="http://127.0.0.1:8000/avisar"> Avisar infeccao</a></div>
+<div class='opcoes caixaAvisar'></div>
+<div class='opcoes tituloTrocar'><a href="http://127.0.0.1:8000/trocar">Trocar itens</a></div>
+<div class='opcoes caixaTrocar'></div>
+</body>1
 </html>

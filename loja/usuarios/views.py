@@ -16,6 +16,11 @@ def usuarioCadastro(request):
   return HttpResponse(template.render())
 
 @csrf_exempt
+def avisar(request):
+      template = loader.get_template('avisar.html')
+      return HttpResponse(template.render())
+
+@csrf_exempt
 def setUsuario(request):
    print(request.body)
    usuario = Usuario(
@@ -36,3 +41,18 @@ def setUsuario(request):
    'myusuarios': myusuarios,
    }
    return HttpResponse(template.render(context, request))
+
+@csrf_exempt
+def atualizarUsuario(request):
+   print(request.body)
+   myusuario = Usuario.objects.get(nome=request.POST.get('nome'))
+   if(request.POST.get('avisar') == 1 and myusuario.infectado == False):
+     myusuario.avisar += 1
+     myusuario.save()
+   template = loader.get_template('todos_os_usuarios.html')
+   return HttpResponse(template.render())
+
+@csrf_exempt
+def trocar(request):
+    template = loader.get_template('trocar.html')
+    return HttpResponse(template.render())

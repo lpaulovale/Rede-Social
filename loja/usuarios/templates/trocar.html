@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'trocar.css' %}">
+</head>
+<body>
+
+<!--Banner-->
+<div class='banner retangulo'></div>
+<div> <img class="banner icon" rel="icone" src="{% static 'icon.png' %}"> </img></div>
+<div class="banner logo">Loja</div>
+<div class="banner usuarios">Usuários</div>
+<div class="banner cadastrar">Cadastrar</div>
+<div class="banner analistycs">Analistycs</div>
+
+<!-- Pagina avisar infeccao usuario -->
+<div class="cadastrar titulo">Cadastrar Usuário</div>
+<div class="cadastrar avisoTitulo">Aviso</div>
+
+
+<form action="http://127.0.0.1:8000/trocar/", method="POST">
+<p class="cadastrar tituloNome">Nome:</p>
+<input class="cadastrar caixaNome" type="text" name="nome">
+<p class="cadastrar tituloNome2">Nome do usuario:</p>
+<input class="cadastrar caixaNome2" type="text" name="nome2">
+<p class="cadastrar tituloAgua">Água:</p>
+<input class="cadastrar caixaAgua" type="number" name="quantidade1">
+<p class="cadastrar tituloAlimento">Alimento:</p>
+<input class="cadastrar caixaAlimento" type="number" name="quantidade2">
+<p class="cadastrar tituloMedicacao">Medicacao:</p>
+<input class="cadastrar caixaMedicacao" type="number" name="quantidade3">
+<p class="cadastrar tituloMunicao">Municao:</p>
+<input class="cadastrar caixaMunicao" type="number" name="quantidade4">
+<input class="cadastrar botao" type="submit" value="Avisar">
+</form>
+
+</body>
+</html>
