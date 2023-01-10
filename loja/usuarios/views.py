@@ -12,7 +12,7 @@ def usuarios(request):
   return HttpResponse(template.render(context, request))
 @csrf_exempt
 def usuarioCadastro(request):
-  template = loader.get_template('cadastrarUsuario.html')
+  template = loader.get_template('cadastrar.html')
   return HttpResponse(template.render())
 
 @csrf_exempt
@@ -47,13 +47,19 @@ def setUsuario(request):
 def atualizarInfectado(request):
    print(request.body)
    myusuario = Usuario.objects.get(nome=request.POST.get('nome'))
-   if(request.POST.get('avisar') == 1 and myusuario.infectado == False):
-     myusuario.avisar += 1
-     if(myusuario==3):
+
+   if (myusuario.infectado == False):
+    myusuario.aviso =+ 1
+   
+    if(myusuario.aviso==3):
        myusuario.infectado = True
-     myusuario.save()  
+       
+    myusuario.save()  
    template = loader.get_template('usuarios.html')
-   return HttpResponse(template.render())
+   context = {
+   'myusuario': myusuario,
+   }
+   return HttpResponse(template.render(context, request))
 
 @csrf_exempt
 def trocar(request):

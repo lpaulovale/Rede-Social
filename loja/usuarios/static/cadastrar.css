@@ -148,21 +148,23 @@ color: #000000;
 
 	color: #000000;
 }
+
 .cadastrar.avisoTitulo{
-	position: absolute;
-	width: 208px;
-	height: 34px;
-	left: 167px;
-	top: 808px;
+position: absolute;
+width: 208px;
+height: 34px;
+left: 167px;
+top: 808px;
 
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 19px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
 
-	color: #000000;
+color: #000000;
 }
+
 .cadastrar.longitudeTitulo{position: absolute;
 width: 221px;
 height: 33px;
@@ -277,19 +279,19 @@ color: #000000;}
 }
 .cadastrar.caixaAviso{
 	position: absolute;
-	width: 208px;
+	width: 389px;
 	height: 34px;
-	left: 167px;
+	left: 376px;
 	top: 808px;
-
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 19px;
-
-	color: #000000;
+	background: #D9D9D9
 }
+
+
 .cadastrar.caixaLongitude{position: absolute;
 	position: absolute;
 	width: 389px;
@@ -343,29 +345,23 @@ top: 740px;
 background: #D9D9D9;}
 
 .cadastrar.caixaEnviar{
-	position: absolute;
-	width: 74px;
-	height: 43px;
-	left: 485px;
-	top: 867px;
+position: absolute;
+width: 74px;
+height: 43px;
+left: 485px;
+top: 926px;
 
-	background: #D9D9D9;
-	border-radius: 25px;
+background: #D9D9D9;
+border-radius: 25px;
+
 }
 
 .cadastrar.enviarTitulo{
 
-	position: absolute;
-	width: 59px;
-	height: 15px;
-	left: 500px;
-	top: 881px;
+position: absolute;
+width: 71px;
+height: 15px;
+left: 500px;
+top: 940px;
 
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 19px;
-
-	color: #000000;
 }
