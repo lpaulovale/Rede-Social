@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'usuarios.css' %}">
+</head>
+<body>
+  <!--Banner-->
+  <div class='banner retangulo'></div>
+  <div> <img class="banner icon" rel="icone" src="{% static 'icon.png' %}"> </img></div>
+  <div class="banner logo">ZSSN</div>
+<div class="banner usuarios"><a href="http://127.0.0.1:8000/usuarios/">Usuários</a></div>
+<div class="banner cadastrar"><a href="http://127.0.0.1:8000/cadastro">Cadastrar</a></div>
+<div class="banner analistycs"><a href="http://127.0.0.1:8000/analytics">Analistycs</a></div>
+
+<h1>Usuarios</h1>
+<div class="flex-container">
+  {% for x in myusuarios %}
+  <div>
+    Nome : {{ x.nome }}<br> Idade: {{ x.idade }}<br> Sexo : {{ x.sexo }}<br> Latitude : {{ x.latitude }}<br> Longitude : {{ x.longitude }}<br>
+    Aviso : {{ x.aviso }}<br> Água : {{ x.quantidade1 }}<br> Alimento : {{ x.quantidade2 }}<br> Medicação : {{ x.quantidade3 }}<br> Munição : {{ x.quantidade4 }}
+  </div>
+  {% endfor %}
+</div>
+
+
+<div class='opcoes caixaAvisar'><div class='opcoes textoAvisar'><a href="http://127.0.0.1:8000/avisar"> Avisar infeccao</a></div></div>
+<div class='opcoes caixaTrocar'><div class='opcoes textoTrocar'><a href="http://127.0.0.1:8000/trocar">Trocar itens</a></div></div>
+
+</body>
+</html>

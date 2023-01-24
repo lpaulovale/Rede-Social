@@ -1,0 +1,359 @@
+.banner.icon{
+	position: absolute;
+	width: 40px;
+	height: 37px;
+	left: 26px;
+	top: 12px;
+
+	background: url(icon.png);
+}
+
+.banner.logo{
+position: absolute;
+width: 175px;
+height: 33px;
+left: 83px;
+top: 12px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+
+color: #000000;
+
+}
+.banner.retangulo{
+	position: absolute;
+	width: 1747px;
+	height: 68px;
+	left: 0px;
+	top: 0px;
+
+	background: #D9D9D9;
+}
+
+.banner.usuarios{
+	position: absolute;
+	width: 196px;
+	height: 18px;
+	left: 682px;
+	top: 6px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 48px;
+
+	color: #000000;
+
+}
+
+.banner.cadastrar{
+	position: absolute;
+	width: 261px;
+	height: 32px;
+	left: 890px;
+	top: 4px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 48px;
+
+	color: #000000;
+
+}
+
+.banner.analistycs{
+	position: absolute;
+	width: 272px;
+	height: 30px;
+	left: 1151px;
+	top: 6px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 48px;
+
+	color: #000000;
+
+}
+
+
+.cadastrar.caixaNome{
+position: absolute;
+width: 389px;
+height: 38px;
+left: 376px;
+top: 272px;
+
+background: #D9D9D9;
+}
+	
+.cadastrar.tituloNome{position: absolute;
+width: 199px;
+height: 38px;
+left: 168px;
+top: 272px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}
+.cadastrar.botao{}
+
+.cadastrar.tituloNome1{position: absolute;
+width: 221px;
+height: 32px;
+left: 168px;
+top: 335px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}
+.cadastrar.caixaAviso{
+	position: absolute;
+width: 389px;
+height: 38px;
+left: 376px;
+top: 331px;
+
+background: #D9D9D9;
+
+}
+
+.cadastrar.caixaAgua{position: absolute;
+width: 389px;
+height: 38px;
+left: 376px;
+top: 380px;
+
+background: #D9D9D9;}
+.cadastrar.caixaAlimento{position: absolute;
+width: 389px;
+height: 38px;
+left: 376px;
+top: 432px;
+
+background: #D9D9D9;}
+.cadastrar.caixaMedicacao{
+position: absolute;
+width: 389px;
+height: 38px;
+left: 376px;
+top: 495px;
+
+background: #D9D9D9;}
+.cadastrar.caixaMunicao{position: absolute;
+width: 389px;
+height: 38px;
+left: 376px;
+top: 554px;
+
+background: #D9D9D9;}
+
+.cadastrar.tituloAgua{position: absolute;
+width: 208px;
+height: 33px;
+left: 168px;
+top: 394px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}
+.cadastrar.tituloAlimento{position: absolute;
+width: 199px;
+height: 38px;
+left: 168px;
+top: 451px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}
+.cadastrar.tituloMedicacao{position: absolute;
+width: 221px;
+height: 33px;
+left: 168px;
+top: 514px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}
+.cadastrar.tituloMunicao{position: absolute;
+width: 208px;
+height: 34px;
+left: 168px;
+top: 573px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}
+
+.cadastrar.botao{
+position: absolute;
+width: 71px;
+height: 15px;
+left: 764px;
+top: 850px;
+position: absolute;
+width: 74px;
+height: 43px;
+left: 749px;
+top: 836px;
+
+background: #D9D9D9;
+border-radius: 25px;
+}
+
+
+
+
+
+
+.cadastrar.caixaNome2{
+position: absolute;
+width: 389px;
+height: 38px;
+left: 1006px;
+top: 270px;
+
+background: #D9D9D9;
+}
+	
+.cadastrar.tituloNome2{
+position: absolute;
+width: 199px;
+height: 38px;
+left: 798px;
+top: 270px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}
+.cadastrar.botao{}
+
+.cadastrar.caixaAgua2{
+position: absolute;
+width: 389px;
+height: 38px;
+left: 1006px;
+top: 329px;
+
+background: #D9D9D9;
+
+background: #D9D9D9;}
+.cadastrar.caixaAlimento2{
+position: absolute;
+width: 389px;
+height: 38px;
+left: 1006px;
+top: 378px;
+
+background: #D9D9D9;}
+.cadastrar.caixaMedicacao2{
+position: absolute;
+width: 389px;
+height: 38px;
+left: 1006px;
+top: 430px;
+
+background: #D9D9D9;}
+.cadastrar.caixaMunicao2{
+position: absolute;
+width: 389px;
+height: 38px;
+left: 1006px;
+top: 493px;
+
+background: #D9D9D9;}
+
+.cadastrar.tituloAgua2{
+position: absolute;
+width: 221px;
+height: 32px;
+left: 798px;
+top: 333px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}
+.cadastrar.tituloAlimento2{position: absolute;
+width: 208px;
+height: 33px;
+left: 798px;
+top: 392px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+}
+.cadastrar.tituloMedicacao2{
+position: absolute;
+width: 199px;
+height: 38px;
+left: 798px;
+top: 449px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+}
+.cadastrar.tituloMunicao2{
+position: absolute;
+width: 221px;
+height: 33px;
+left: 798px;
+top: 512px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;}

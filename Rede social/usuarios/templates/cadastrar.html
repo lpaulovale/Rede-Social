@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'cadastrar.css' %}">
+</head>
+<body>
+
+<!--Banner-->
+<div class='banner retangulo'></div>
+<div> <img class="banner icon" rel="icone" src="{% static 'icon.png' %}"> </img></div>
+<div class="banner logo">ZSSN</div>
+<div class="banner usuarios"><a href="http://127.0.0.1:8000/usuarios/">Usuários</a></div>
+<div class="banner cadastrar"><a href="http://127.0.0.1:8000/cadastro">Cadastrar</a></div>
+<div class="banner analistycs"><a href="http://127.0.0.1:8000/analytics">Analistycs</a></div>
+
+<!-- Pagina cadastro usuario -->
+<div class="cadastrar titulo">Cadastrar Usúario</div>
+<div class="cadastrar nomeTitulo">Nome</div>
+<div class="cadastrar idadeTitulo">Idade</div>
+<div class="cadastrar sexoTitulo">Sexo</div>
+<div class="cadastrar avisoTitulo">Aviso </div>
+<div class="cadastrar longitudeTitulo">Longitude</div>
+<div class="cadastrar latitudeTitulo">Latitude</div>
+<div class="cadastrar descricao1Titulo">Quantidade de Água</div>
+<div class="cadastrar descricao2Titulo">Quantidade de Álimento</div>
+<div class="cadastrar descricao3Titulo">Quantidade de Medicação</div>
+<div class="cadastrar descricao4Titulo">Quantidade de Munição</div>
+<div class="cadastrar enviarTitulo">Enviar</div>
+
+<form action="/setUsuario/", method="POST">
+
+<div>
+<input class="cadastrar caixaNome type="text" name="nome">
+</input>
+</div>
+<div>
+   <input class="cadastrar caixaIdade" type="number" name="idade">
+</input>
+ </div>
+<div>
+  <input class="cadastrar caixaSexo" type="text" name="sexo">
+</input>
+</div>
+<input class="cadastrar caixaLongitude type="text" name="longitude">
+</input>
+</div>
+<div>
+<input class="cadastrar caixaLatitude type="text" name="latitude">
+</input>
+</div>
+<div>
+<input class="cadastrar caixaAviso type="number" name="aviso">
+</input>
+</div>
+<div>
+<input class="cadastrar caixaQuantidade1 type="number" name="quantidade1">
+</input>
+</div>
+<div>
+<input class="cadastrar caixaQuantidade2 type="number" name="quantidade2">
+</input>
+</div>
+<div>
+<input class="cadastrar caixaQuantidade3 type="number" name="quantidade3">
+</input>
+</div>
+<div>
+<input class="cadastrar caixaQuantidade4 type="number" name="quantidade4">
+</input>
+</div>
+
+<div ><input class="cadastrar caixaEnviar" type="submit" value="Enviar">
+</input></div>
+<div>
+
+</form>
+
+</body>
+</html>

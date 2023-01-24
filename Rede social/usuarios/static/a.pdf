@@ -1,0 +1,33 @@
+   CIM (Grafo grafo, i){
+       int vAdjacente[i], marcados[i], mT = 0, aT = 0, sizeY = 0;
+	 bool nMarca = false;
+        for(int x = 0; x < i; x++)
+       	{
+		for(int y = 0; y < j; y++)
+		   {
+			sizeY++;
+			for(int k = 0; k < aT ; k++)
+			{
+				//se é vertice adjacente ou já está marcado não marca
+				if(x == vAdjacente[k] || grafo[x][y] == marcados[k])
+				{
+					nMarca = true;
+				}
+			}
+		}
+		//se não é vertice adjacente e não está marcado
+		if(nMarca == false)
+		{
+			marcados[mT] = x;//marca vertice atual
+			mT++;
+
+			for(int k = 0; k < sizeY; k++)
+			{
+				//vertices adjacentes ao marcado a não serão mais marcados
+				vAdjacente[aT] = grafo[x][k];
+				aT++;
+			}
+		}
+		sizeY = 0;
+		nMarca = false;
+	}
