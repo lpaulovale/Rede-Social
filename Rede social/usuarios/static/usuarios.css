@@ -35,54 +35,54 @@ color: #000000;
 }
 
 .banner.usuarios{
-	position: absolute;
-	width: 196px;
-	height: 18px;
-	left: 682px;
-	top: 6px;
+position: absolute;
+width: 196px;
+height: 18px;
+left: 651px;
+top: 6px;
 
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 40px;
-	line-height: 48px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 48px;
 
-	color: #000000;
+color: #000000;
 
 }
 
 .banner.cadastrar{
-	position: absolute;
-	width: 261px;
-	height: 32px;
-	left: 890px;
-	top: 4px;
+position: absolute;
+width: 261px;
+height: 32px;
+left: 874px;
+top: 6px;
 
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 40px;
-	line-height: 48px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 48px;
 
-	color: #000000;
+color: #000000;
+
 
 }
 
 .banner.analistycs{
-	position: absolute;
-	width: 272px;
-	height: 30px;
-	left: 1151px;
-	top: 6px;
+position: absolute;
+width: 272px;
+height: 30px;
+left: 1135px;
+top: 6px;
 
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 40px;
-	line-height: 48px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 48px;
 
-	color: #000000;
-
+color: #000000;
 }
 
 
@@ -117,7 +117,7 @@ height: 50px;
 background-color: blue;
 }
 
-.textoAvisar a, .textoTrocar a {
-text-decoration: none;
-color: white;
+a {
+color: #FFFFFF;
+    text-decoration: none;
 }

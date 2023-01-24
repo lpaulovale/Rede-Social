@@ -2,6 +2,8 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.template import loader
 from .models import Usuario
 from django.views.decorators.csrf import csrf_exempt
+
+  #Página usuarios com os usuários já cadastrados
 @csrf_exempt
 def usuarios(request):
   myusuarios = Usuario.objects.all().values()
@@ -10,19 +12,22 @@ def usuarios(request):
     'myusuarios': myusuarios,
   }
   return HttpResponse(template.render(context, request))
+  
+  #Página de cadastro
 @csrf_exempt
 def usuarioCadastro(request):
   template = loader.get_template('cadastrar.html')
   return HttpResponse(template.render())
-
+  
+  #Página de avisar que sobrevivente foi infectado
 @csrf_exempt
 def avisar(request):
       template = loader.get_template('avisar.html')
       return HttpResponse(template.render())
 
+  #Cadastrar usuário 
 @csrf_exempt
 def setUsuario(request):
-   print(request.body)
    usuario = Usuario(
    nome = request.POST.get('nome'),
    idade = request.POST.get('idade'),
@@ -34,43 +39,56 @@ def setUsuario(request):
    quantidade2 = request.POST.get('quantidade2'),
    quantidade3 = request.POST.get('quantidade3'),
    quantidade4 = request.POST.get('quantidade4'))
+   
    myusuario = usuario.save()
    myusuarios = Usuario.objects.all().values()
-   print(myusuarios)
+
    template = loader.get_template('usuarios.html')
+   
    context = {
    'myusuarios': myusuarios,
    }
+  
    return HttpResponse(template.render(context, request))
 
+  #Atualiza número de aviso de infecção de um sobrevivente ou se foi infectado
 @csrf_exempt
 def atualizarInfectado(request):
-   print(request.body)
-   myusuario = Usuario.objects.get(nome=request.POST.get('nome'))
-
-   if (myusuario.infectado == False):
-    myusuario.aviso =+ 1
    
+   myusuario = Usuario.objects.get(nome=request.POST.get('nome'))
+   
+   #adiciona aviso de infecção
+   if (myusuario.infectado == False):
+    myusuario.aviso += 1
+   
+   #caso tenha 3 avisos está infectado
     if(myusuario.aviso==3):
        myusuario.infectado = True
        
     myusuario.save()  
+  
    template = loader.get_template('usuarios.html')
+   
    context = {
    'myusuario': myusuario,
    }
+   
    return HttpResponse(template.render(context, request))
 
+  #Página de trocar itens
 @csrf_exempt
 def trocar(request):
     template = loader.get_template('trocar.html')
     return HttpResponse(template.render())
 
+  #Troca itens e pontos entre sobreviventes
 @csrf_exempt
 def atualizarTroca(request):
+   
    myuser = Usuario.objects.get(nome=request.POST.get('nome'))
    myuser2 = Usuario.objects.get(nome=request.POST.get('nome2'))
-   print(request.body)
+   
+     #Recupera a quantidade dos itens no request.POST e calcula os pontos 
    quantidade1 = request.POST.get('quantidade1')
    quantidade2 = request.POST.get('quantidade2')
    quantidade3 = request.POST.get('quantidade3')
@@ -79,6 +97,7 @@ def atualizarTroca(request):
    quantidade22 = request.POST.get('quantidade22')
    quantidade32 = request.POST.get('quantidade32')
    quantidade42 = request.POST.get('quantidade42')
+     #Transforma para int
    quantidade1 = int(quantidade1)
    quantidade2 = int(quantidade2)
    quantidade3 = int(quantidade3)
@@ -87,8 +106,10 @@ def atualizarTroca(request):
    quantidade22 = int(quantidade22)
    quantidade32 = int(quantidade32)
    quantidade42 = int(quantidade42)
+   
    pontos=0
    pontos2=0
+   
    pontos+= (quantidade1*4)
    pontos+= quantidade2*3
    pontos+=quantidade3*2 
@@ -98,8 +119,10 @@ def atualizarTroca(request):
    pontos2+=quantidade32*2 
    pontos2+=quantidade42 
    
+   #se algum usuario estiver infectado ou a quantidade de pontos dos itens não for a mesma, a ação retorna erro
    if(myuser.infectado or myuser2.infectado or pontos != pontos2):
     return HttpResponseNotFound('<h1>Incorrect request</h1>')
+     #Caso contrario recalcula as novas quantidades de itens dos clientes
    else:
     myuser.quantidade1 -= quantidade1
     myuser.quantidade2 -= quantidade2
@@ -125,20 +148,27 @@ def atualizarTroca(request):
     template = loader.get_template('usuarios.html')
     return HttpResponse(template.render())
     
+    #Página de Atualização de local
 @csrf_exempt
 def atualizarLocal(request):
    template = loader.get_template('atualizarLocal.html')
    return HttpResponse(template.render())
 
+  #Atualiza o local do sobrevivente
 @csrf_exempt
 def atualizarLocalizacao(request):
    myuser = Usuario.objects.get(nome=request.POST.get('nome'))
+   
    myuser.latitude = request.POST.get('latitude')
    myuser.longitude = request.POST.get('longitude')
+   
    myuser.save()
+   
    template = loader.get_template('usuarios.html')
+   
    return HttpResponse(template.render())
 
+#Calcula as funções de analytics e renderiza a página de analytics
 @csrf_exempt
 def analytics(request):
   myusuarios = Usuario.objects.all()
@@ -151,20 +181,22 @@ def analytics(request):
   quantMedicamentos=0
   quantMunicao=0
   
+  #Pontos perdidos
   for i in myusuarios:
     nUsuarios += 1
-    
     if (i.infectado == True):
       nInfectados += 1
-      pontosPerdidos(i.quantidade1 * 4) + (i.quantidade2 *3) + (i.quantidade3 *2) +i.quantidade4
-    
+      pontosPerdidos = ((i.quantidade1 * 4) + (i.quantidade2 *3) + (i.quantidade3 *2) +i.quantidade4)
+    #Calcula quantidades de itens
     quantAgua += i.quantidade1 
     quantAlimento += i.quantidade2 
     quantMedicamentos += i.quantidade3 
     quantMunicao += i.quantidade4
-  
+
   porcentagemInfectados = (nInfectados/nUsuarios)*100
   porcentagemNaoInfectados = 100 - porcentagemInfectados
+  
+  #Quantidade dos itens por sobrevivente
   quantAguaM = quantAgua/nUsuarios
   quantAlimentoM = quantAlimento/nUsuarios
   quantMedicamentosM = quantMedicamentos/nUsuarios
@@ -181,4 +213,5 @@ def analytics(request):
    }
    
   template = loader.get_template('analytics.html')
+  
   return HttpResponse(template.render(context, request))
